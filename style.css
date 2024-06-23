@@ -31,12 +31,30 @@ body {
   color: var(--white);
   font-size: 1.5rem;
   cursor: pointer;
-  display: none;
 }
 
 #mainMenuOpen::after {
   content: "\2630";
 }
+
+  .cart {
+    background-color: transparent;
+    color: white;
+    padding: 0;
+    margin-top: 18px;
+    margin-left: 25px;
+    margin-right: 0px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0;
+  }
+
+  .cart:hover {
+    color: var(--light-blue)
+  }
 
 nav {
   position: fixed;
@@ -69,6 +87,7 @@ nav a {
 
 nav a:hover {
   color: var(--light-blue);
+  border-bottom: 1px solid var(--light-blue);
 }
 
 main {
@@ -111,6 +130,10 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-around;
+
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .bling img {
@@ -207,18 +230,31 @@ p {
 
 footer {
   background-color: rgb(55, 55, 55);
+  width: 100vw;
   color: var(--white);
-  padding: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 @media screen and (min-width: 800px) {
-
+  .nav-buttons {
+    display: flex;
+  }
+  #mainMenuOpen {
+    display: none;
+  }
+  .cart {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 800px) {
+  body {
+    max-width: 390;
+    overflow-x: hidden;
+  }
   nav {
     display: flex;
     flex-flow: row;
@@ -229,20 +265,43 @@ footer {
   }
   nav h2 {
     font-size: 1.25rem;
+    flex: 6;
   }
   #mainMenuOpen {
     display: block;
+    margin-left: 0;
+    padding-left: 0;
+    flex: 3;
   }
   #mainMenuOpen:hover {
     color: var(--light-blue);
   }
+
+  .cart {
+    background-color: transparent;
+    color: white;
+    padding: 0;
+    margin-top: 18px;
+    margin-left: 25px;
+    margin-right: 0px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0;
+  }
+  .cart:hover {
+    color: var(--light-blue)
+  }
+
   .nav-buttons {
     background-color: #141414ed;
     border-radius: 0px;
     padding: 1rem;
     width: 100vw;
     position: fixed;
-    top: 3.54rem;
+    top: 3.50rem;
     right: 0;
     left: 0;
 
@@ -258,7 +317,7 @@ footer {
 
   .main-img {
     width: 100vw;
-    height: 300px;
+    height: 400px;
     object-fit: cover;
   }
   h1 {
@@ -269,21 +328,36 @@ footer {
   }
 
   .bling {
-    padding: 3rem 1.5rem 3rem 1.5rem;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
   }
   .bling-text {
     padding: 0.25rem;
     font-size: 1rem;
   }
   .bling-text h1 {
-    max-width: 100px;
+    max-width: 400px;
   }
   .bling img {
-    width: 48%;
+    width: 80%;
   }
 
   .about {
     padding-top: 1rem;
+  }
+  .contact {
+    padding-left: 0;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-content {
+    max-width: 390px;
+    margin-left: 1.25rem;
   }
   .contact-text {
     min-width: 200px;
@@ -296,11 +370,13 @@ footer {
     margin-bottom: 3.5rem;
   }
   .contact-input {
-    max-width: 400px;
-    margin-right: 20px;
+    margin-left: 0px;
   }
-  .contact-input a {
-    max-width: 200px;
+  .contact-input input {
+    max-width: 96%;
+  }
+  .contact-input button {
+    max-width: 96%;
   }
   .contact-content {
     flex-direction: column;
